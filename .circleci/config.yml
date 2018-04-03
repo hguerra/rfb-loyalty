@@ -45,7 +45,7 @@ jobs:
           command: chmod +x ./gradlew
 
       # run tests and package
-      - run: ./gradlew clean test --no-daemon --max-workers 2
+      - run: ./gradlew clean test --no-daemon --stacktrace
 
       - run:
           name: Save test results
