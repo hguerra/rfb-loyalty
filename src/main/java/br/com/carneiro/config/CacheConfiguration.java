@@ -45,6 +45,12 @@ public class CacheConfiguration {
             cm.createCache(br.com.carneiro.domain.PersistentToken.class.getName(), jcacheConfiguration);
             cm.createCache(br.com.carneiro.domain.User.class.getName() + ".persistentTokens", jcacheConfiguration);
             cm.createCache(br.com.carneiro.domain.SocialUserConnection.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.carneiro.domain.RfbLocation.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.carneiro.domain.RfbLocation.class.getName() + ".rvbEvents", jcacheConfiguration);
+            cm.createCache(br.com.carneiro.domain.RfbEvent.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.carneiro.domain.RfbEvent.class.getName() + ".homeLocations", jcacheConfiguration);
+            cm.createCache(br.com.carneiro.domain.RfbEventAttendance.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.carneiro.domain.RfbUser.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }
