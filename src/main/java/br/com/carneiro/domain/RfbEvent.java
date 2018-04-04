@@ -5,12 +5,11 @@ import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
-
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * A RfbEvent.
@@ -53,17 +52,21 @@ public class RfbEvent implements Serializable {
         return eventDate;
     }
 
+    public void setEventDate(LocalDate eventDate) {
+        this.eventDate = eventDate;
+    }
+
     public RfbEvent eventDate(LocalDate eventDate) {
         this.eventDate = eventDate;
         return this;
     }
 
-    public void setEventDate(LocalDate eventDate) {
-        this.eventDate = eventDate;
-    }
-
     public String getEventCode() {
         return eventCode;
+    }
+
+    public void setEventCode(String eventCode) {
+        this.eventCode = eventCode;
     }
 
     public RfbEvent eventCode(String eventCode) {
@@ -71,12 +74,12 @@ public class RfbEvent implements Serializable {
         return this;
     }
 
-    public void setEventCode(String eventCode) {
-        this.eventCode = eventCode;
-    }
-
     public RfbLocation getRfbLocation() {
         return rfbLocation;
+    }
+
+    public void setRfbLocation(RfbLocation rfbLocation) {
+        this.rfbLocation = rfbLocation;
     }
 
     public RfbEvent rfbLocation(RfbLocation rfbLocation) {
@@ -84,12 +87,12 @@ public class RfbEvent implements Serializable {
         return this;
     }
 
-    public void setRfbLocation(RfbLocation rfbLocation) {
-        this.rfbLocation = rfbLocation;
-    }
-
     public Set<RfbEventAttendance> getHomeLocations() {
         return homeLocations;
+    }
+
+    public void setHomeLocations(Set<RfbEventAttendance> rfbEventAttendances) {
+        this.homeLocations = rfbEventAttendances;
     }
 
     public RfbEvent homeLocations(Set<RfbEventAttendance> rfbEventAttendances) {
@@ -107,10 +110,6 @@ public class RfbEvent implements Serializable {
         this.homeLocations.remove(rfbEventAttendance);
         rfbEventAttendance.setRfbEvent(null);
         return this;
-    }
-
-    public void setHomeLocations(Set<RfbEventAttendance> rfbEventAttendances) {
-        this.homeLocations = rfbEventAttendances;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

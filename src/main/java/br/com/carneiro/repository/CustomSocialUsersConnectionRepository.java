@@ -1,7 +1,6 @@
 package br.com.carneiro.repository;
 
 import br.com.carneiro.domain.SocialUserConnection;
-
 import org.springframework.social.connect.*;
 
 import java.util.List;

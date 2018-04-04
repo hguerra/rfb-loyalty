@@ -1,11 +1,11 @@
 package br.com.carneiro.web.rest;
 
-import com.codahale.metrics.annotation.Timed;
 import br.com.carneiro.service.RfbLocationService;
+import br.com.carneiro.service.dto.RfbLocationDTO;
 import br.com.carneiro.web.rest.errors.BadRequestAlertException;
 import br.com.carneiro.web.rest.util.HeaderUtil;
 import br.com.carneiro.web.rest.util.PaginationUtil;
-import br.com.carneiro.service.dto.RfbLocationDTO;
+import com.codahale.metrics.annotation.Timed;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -29,10 +28,8 @@ import java.util.Optional;
 @RequestMapping("/api")
 public class RfbLocationResource {
 
-    private final Logger log = LoggerFactory.getLogger(RfbLocationResource.class);
-
     private static final String ENTITY_NAME = "rfbLocation";
-
+    private final Logger log = LoggerFactory.getLogger(RfbLocationResource.class);
     private final RfbLocationService rfbLocationService;
 
     public RfbLocationResource(RfbLocationService rfbLocationService) {

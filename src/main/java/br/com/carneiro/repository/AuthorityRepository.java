@@ -1,7 +1,6 @@
 package br.com.carneiro.repository;
 
 import br.com.carneiro.domain.Authority;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

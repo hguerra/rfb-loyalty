@@ -1,8 +1,8 @@
 package br.com.carneiro.service.impl;
 
-import br.com.carneiro.service.RfbUserService;
 import br.com.carneiro.domain.RfbUser;
 import br.com.carneiro.repository.RfbUserRepository;
+import br.com.carneiro.service.RfbUserService;
 import br.com.carneiro.service.dto.RfbUserDTO;
 import br.com.carneiro.service.mapper.RfbUserMapper;
 import org.slf4j.Logger;

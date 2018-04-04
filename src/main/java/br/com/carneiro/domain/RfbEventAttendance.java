@@ -4,7 +4,6 @@ import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
-
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
@@ -46,17 +45,21 @@ public class RfbEventAttendance implements Serializable {
         return attendanceDate;
     }
 
+    public void setAttendanceDate(LocalDate attendanceDate) {
+        this.attendanceDate = attendanceDate;
+    }
+
     public RfbEventAttendance attendanceDate(LocalDate attendanceDate) {
         this.attendanceDate = attendanceDate;
         return this;
     }
 
-    public void setAttendanceDate(LocalDate attendanceDate) {
-        this.attendanceDate = attendanceDate;
-    }
-
     public RfbEvent getRfbEvent() {
         return rfbEvent;
+    }
+
+    public void setRfbEvent(RfbEvent rfbEvent) {
+        this.rfbEvent = rfbEvent;
     }
 
     public RfbEventAttendance rfbEvent(RfbEvent rfbEvent) {
@@ -64,21 +67,17 @@ public class RfbEventAttendance implements Serializable {
         return this;
     }
 
-    public void setRfbEvent(RfbEvent rfbEvent) {
-        this.rfbEvent = rfbEvent;
-    }
-
     public RfbUser getRfbUser() {
         return rfbUser;
+    }
+
+    public void setRfbUser(RfbUser rfbUser) {
+        this.rfbUser = rfbUser;
     }
 
     public RfbEventAttendance rfbUser(RfbUser rfbUser) {
         this.rfbUser = rfbUser;
         return this;
-    }
-
-    public void setRfbUser(RfbUser rfbUser) {
-        this.rfbUser = rfbUser;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

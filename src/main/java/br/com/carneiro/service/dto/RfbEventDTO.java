@@ -1,10 +1,8 @@
 package br.com.carneiro.service.dto;
 
 
-import java.time.LocalDate;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import java.time.LocalDate;
 import java.util.Objects;
 
 /**
@@ -62,7 +60,7 @@ public class RfbEventDTO implements Serializable {
         }
 
         RfbEventDTO rfbEventDTO = (RfbEventDTO) o;
-        if(rfbEventDTO.getId() == null || getId() == null) {
+        if (rfbEventDTO.getId() == null || getId() == null) {
             return false;
         }
         return Objects.equals(getId(), rfbEventDTO.getId());

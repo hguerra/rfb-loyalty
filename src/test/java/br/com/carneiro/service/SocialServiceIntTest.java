@@ -6,8 +6,6 @@ import br.com.carneiro.domain.User;
 import br.com.carneiro.repository.AuthorityRepository;
 import br.com.carneiro.repository.UserRepository;
 import br.com.carneiro.security.AuthoritiesConstants;
-import br.com.carneiro.service.MailService;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -60,7 +58,7 @@ public class SocialServiceIntTest {
         when(mockUsersConnectionRepository.createConnectionRepository(anyString())).thenReturn(mockConnectionRepository);
 
         socialService = new SocialService(mockUsersConnectionRepository, authorityRepository,
-                passwordEncoder, userRepository, mockMailService);
+            passwordEncoder, userRepository, mockMailService);
     }
 
     @Test

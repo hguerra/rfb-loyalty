@@ -1,14 +1,12 @@
 package br.com.carneiro.web.rest;
 
 import br.com.carneiro.RfbloyaltyApp;
-
 import br.com.carneiro.domain.RfbEvent;
 import br.com.carneiro.repository.RfbEventRepository;
 import br.com.carneiro.service.RfbEventService;
 import br.com.carneiro.service.dto.RfbEventDTO;
 import br.com.carneiro.service.mapper.RfbEventMapper;
 import br.com.carneiro.web.rest.errors.ExceptionTranslator;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -74,6 +72,19 @@ public class RfbEventResourceIntTest {
 
     private RfbEvent rfbEvent;
 
+    /**
+     * Create an entity for this test.
+     * <p>
+     * This is a static method, as tests for other entities might also need it,
+     * if they test an entity which requires the current entity.
+     */
+    public static RfbEvent createEntity(EntityManager em) {
+        RfbEvent rfbEvent = new RfbEvent()
+            .eventDate(DEFAULT_EVENT_DATE)
+            .eventCode(DEFAULT_EVENT_CODE);
+        return rfbEvent;
+    }
+
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
@@ -83,19 +94,6 @@ public class RfbEventResourceIntTest {
             .setControllerAdvice(exceptionTranslator)
             .setConversionService(createFormattingConversionService())
             .setMessageConverters(jacksonMessageConverter).build();
-    }
-
-    /**
-     * Create an entity for this test.
-     *
-     * This is a static method, as tests for other entities might also need it,
-     * if they test an entity which requires the current entity.
-     */
-    public static RfbEvent createEntity(EntityManager em) {
-        RfbEvent rfbEvent = new RfbEvent()
-            .eventDate(DEFAULT_EVENT_DATE)
-            .eventCode(DEFAULT_EVENT_CODE);
-        return rfbEvent;
     }
 
     @Before

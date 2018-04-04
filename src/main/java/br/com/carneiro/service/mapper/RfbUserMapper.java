@@ -1,9 +1,9 @@
 package br.com.carneiro.service.mapper;
 
-import br.com.carneiro.domain.*;
+import br.com.carneiro.domain.RfbUser;
 import br.com.carneiro.service.dto.RfbUserDTO;
-
-import org.mapstruct.*;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 /**
  * Mapper for the entity RfbUser and its DTO RfbUserDTO.

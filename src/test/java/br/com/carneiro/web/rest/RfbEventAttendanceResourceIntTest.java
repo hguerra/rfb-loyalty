@@ -1,14 +1,12 @@
 package br.com.carneiro.web.rest;
 
 import br.com.carneiro.RfbloyaltyApp;
-
 import br.com.carneiro.domain.RfbEventAttendance;
 import br.com.carneiro.repository.RfbEventAttendanceRepository;
 import br.com.carneiro.service.RfbEventAttendanceService;
 import br.com.carneiro.service.dto.RfbEventAttendanceDTO;
 import br.com.carneiro.service.mapper.RfbEventAttendanceMapper;
 import br.com.carneiro.web.rest.errors.ExceptionTranslator;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -71,6 +69,18 @@ public class RfbEventAttendanceResourceIntTest {
 
     private RfbEventAttendance rfbEventAttendance;
 
+    /**
+     * Create an entity for this test.
+     * <p>
+     * This is a static method, as tests for other entities might also need it,
+     * if they test an entity which requires the current entity.
+     */
+    public static RfbEventAttendance createEntity(EntityManager em) {
+        RfbEventAttendance rfbEventAttendance = new RfbEventAttendance()
+            .attendanceDate(DEFAULT_ATTENDANCE_DATE);
+        return rfbEventAttendance;
+    }
+
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
@@ -80,18 +90,6 @@ public class RfbEventAttendanceResourceIntTest {
             .setControllerAdvice(exceptionTranslator)
             .setConversionService(createFormattingConversionService())
             .setMessageConverters(jacksonMessageConverter).build();
-    }
-
-    /**
-     * Create an entity for this test.
-     *
-     * This is a static method, as tests for other entities might also need it,
-     * if they test an entity which requires the current entity.
-     */
-    public static RfbEventAttendance createEntity(EntityManager em) {
-        RfbEventAttendance rfbEventAttendance = new RfbEventAttendance()
-            .attendanceDate(DEFAULT_ATTENDANCE_DATE);
-        return rfbEventAttendance;
     }
 
     @Before

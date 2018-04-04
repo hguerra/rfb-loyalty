@@ -1,49 +1,50 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
 
-import { RfbloyaltySharedModule } from '../../shared';
+import {RfbloyaltySharedModule} from '../../shared';
 import {
-    RfbEventAttendanceService,
-    RfbEventAttendancePopupService,
-    RfbEventAttendanceComponent,
-    RfbEventAttendanceDetailComponent,
-    RfbEventAttendanceDialogComponent,
-    RfbEventAttendancePopupComponent,
-    RfbEventAttendanceDeletePopupComponent,
-    RfbEventAttendanceDeleteDialogComponent,
-    rfbEventAttendanceRoute,
-    rfbEventAttendancePopupRoute,
+  RfbEventAttendanceComponent,
+  RfbEventAttendanceDeleteDialogComponent,
+  RfbEventAttendanceDeletePopupComponent,
+  RfbEventAttendanceDetailComponent,
+  RfbEventAttendanceDialogComponent,
+  RfbEventAttendancePopupComponent,
+  rfbEventAttendancePopupRoute,
+  RfbEventAttendancePopupService,
+  rfbEventAttendanceRoute,
+  RfbEventAttendanceService,
 } from './';
 
 const ENTITY_STATES = [
-    ...rfbEventAttendanceRoute,
-    ...rfbEventAttendancePopupRoute,
+  ...rfbEventAttendanceRoute,
+  ...rfbEventAttendancePopupRoute,
 ];
 
 @NgModule({
-    imports: [
-        RfbloyaltySharedModule,
-        RouterModule.forChild(ENTITY_STATES)
-    ],
-    declarations: [
-        RfbEventAttendanceComponent,
-        RfbEventAttendanceDetailComponent,
-        RfbEventAttendanceDialogComponent,
-        RfbEventAttendanceDeleteDialogComponent,
-        RfbEventAttendancePopupComponent,
-        RfbEventAttendanceDeletePopupComponent,
-    ],
-    entryComponents: [
-        RfbEventAttendanceComponent,
-        RfbEventAttendanceDialogComponent,
-        RfbEventAttendancePopupComponent,
-        RfbEventAttendanceDeleteDialogComponent,
-        RfbEventAttendanceDeletePopupComponent,
-    ],
-    providers: [
-        RfbEventAttendanceService,
-        RfbEventAttendancePopupService,
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  imports: [
+    RfbloyaltySharedModule,
+    RouterModule.forChild(ENTITY_STATES)
+  ],
+  declarations: [
+    RfbEventAttendanceComponent,
+    RfbEventAttendanceDetailComponent,
+    RfbEventAttendanceDialogComponent,
+    RfbEventAttendanceDeleteDialogComponent,
+    RfbEventAttendancePopupComponent,
+    RfbEventAttendanceDeletePopupComponent,
+  ],
+  entryComponents: [
+    RfbEventAttendanceComponent,
+    RfbEventAttendanceDialogComponent,
+    RfbEventAttendancePopupComponent,
+    RfbEventAttendanceDeleteDialogComponent,
+    RfbEventAttendanceDeletePopupComponent,
+  ],
+  providers: [
+    RfbEventAttendanceService,
+    RfbEventAttendancePopupService,
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class RfbloyaltyRfbEventAttendanceModule {}
+export class RfbloyaltyRfbEventAttendanceModule {
+}

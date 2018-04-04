@@ -1,14 +1,12 @@
 package br.com.carneiro.web.rest;
 
 import br.com.carneiro.RfbloyaltyApp;
-
 import br.com.carneiro.domain.RfbUser;
 import br.com.carneiro.repository.RfbUserRepository;
 import br.com.carneiro.service.RfbUserService;
 import br.com.carneiro.service.dto.RfbUserDTO;
 import br.com.carneiro.service.mapper.RfbUserMapper;
 import br.com.carneiro.web.rest.errors.ExceptionTranslator;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -69,6 +67,18 @@ public class RfbUserResourceIntTest {
 
     private RfbUser rfbUser;
 
+    /**
+     * Create an entity for this test.
+     * <p>
+     * This is a static method, as tests for other entities might also need it,
+     * if they test an entity which requires the current entity.
+     */
+    public static RfbUser createEntity(EntityManager em) {
+        RfbUser rfbUser = new RfbUser()
+            .username(DEFAULT_USERNAME);
+        return rfbUser;
+    }
+
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
@@ -78,18 +88,6 @@ public class RfbUserResourceIntTest {
             .setControllerAdvice(exceptionTranslator)
             .setConversionService(createFormattingConversionService())
             .setMessageConverters(jacksonMessageConverter).build();
-    }
-
-    /**
-     * Create an entity for this test.
-     *
-     * This is a static method, as tests for other entities might also need it,
-     * if they test an entity which requires the current entity.
-     */
-    public static RfbUser createEntity(EntityManager em) {
-        RfbUser rfbUser = new RfbUser()
-            .username(DEFAULT_USERNAME);
-        return rfbUser;
     }
 
     @Before

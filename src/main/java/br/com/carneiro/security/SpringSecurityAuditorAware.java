@@ -1,7 +1,6 @@
 package br.com.carneiro.security;
 
 import br.com.carneiro.config.Constants;
-
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;
 

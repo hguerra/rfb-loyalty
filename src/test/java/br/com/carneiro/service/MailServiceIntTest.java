@@ -1,7 +1,7 @@
 package br.com.carneiro.service;
-import br.com.carneiro.config.Constants;
 
 import br.com.carneiro.RfbloyaltyApp;
+import br.com.carneiro.config.Constants;
 import br.com.carneiro.domain.User;
 import io.github.jhipster.config.JHipsterProperties;
 import org.junit.Before;

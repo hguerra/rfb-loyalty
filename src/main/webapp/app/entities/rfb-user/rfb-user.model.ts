@@ -1,10 +1,8 @@
-import { BaseEntity } from './../../shared';
+import {BaseEntity} from './../../shared';
 
 export class RfbUser implements BaseEntity {
-    constructor(
-        public id?: number,
-        public username?: string,
-        public homeLocationId?: number,
-    ) {
-    }
+  constructor(public id?: number,
+              public username?: string,
+              public homeLocationId?: number,) {
+  }
 }

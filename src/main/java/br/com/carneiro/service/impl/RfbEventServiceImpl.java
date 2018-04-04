@@ -1,8 +1,8 @@
 package br.com.carneiro.service.impl;
 
-import br.com.carneiro.service.RfbEventService;
 import br.com.carneiro.domain.RfbEvent;
 import br.com.carneiro.repository.RfbEventRepository;
+import br.com.carneiro.service.RfbEventService;
 import br.com.carneiro.service.dto.RfbEventDTO;
 import br.com.carneiro.service.mapper.RfbEventMapper;
 import org.slf4j.Logger;

@@ -1,14 +1,12 @@
 package br.com.carneiro.web.rest;
 
 import br.com.carneiro.RfbloyaltyApp;
-
 import br.com.carneiro.domain.RfbLocation;
 import br.com.carneiro.repository.RfbLocationRepository;
 import br.com.carneiro.service.RfbLocationService;
 import br.com.carneiro.service.dto.RfbLocationDTO;
 import br.com.carneiro.service.mapper.RfbLocationMapper;
 import br.com.carneiro.web.rest.errors.ExceptionTranslator;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -72,6 +70,19 @@ public class RfbLocationResourceIntTest {
 
     private RfbLocation rfbLocation;
 
+    /**
+     * Create an entity for this test.
+     * <p>
+     * This is a static method, as tests for other entities might also need it,
+     * if they test an entity which requires the current entity.
+     */
+    public static RfbLocation createEntity(EntityManager em) {
+        RfbLocation rfbLocation = new RfbLocation()
+            .locationName(DEFAULT_LOCATION_NAME)
+            .runDayOfWeek(DEFAULT_RUN_DAY_OF_WEEK);
+        return rfbLocation;
+    }
+
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
@@ -81,19 +92,6 @@ public class RfbLocationResourceIntTest {
             .setControllerAdvice(exceptionTranslator)
             .setConversionService(createFormattingConversionService())
             .setMessageConverters(jacksonMessageConverter).build();
-    }
-
-    /**
-     * Create an entity for this test.
-     *
-     * This is a static method, as tests for other entities might also need it,
-     * if they test an entity which requires the current entity.
-     */
-    public static RfbLocation createEntity(EntityManager em) {
-        RfbLocation rfbLocation = new RfbLocation()
-            .locationName(DEFAULT_LOCATION_NAME)
-            .runDayOfWeek(DEFAULT_RUN_DAY_OF_WEEK);
-        return rfbLocation;
     }
 
     @Before

@@ -1,8 +1,8 @@
 package br.com.carneiro.repository;
 
 import br.com.carneiro.domain.SocialUserConnection;
-
 import org.springframework.data.jpa.repository.JpaRepository;
+
 import java.util.List;
 import java.util.Set;
 

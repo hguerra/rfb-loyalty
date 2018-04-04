@@ -5,11 +5,10 @@ import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
-
 import java.io.Serializable;
 import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * A RfbLocation.
@@ -49,17 +48,21 @@ public class RfbLocation implements Serializable {
         return locationName;
     }
 
+    public void setLocationName(String locationName) {
+        this.locationName = locationName;
+    }
+
     public RfbLocation locationName(String locationName) {
         this.locationName = locationName;
         return this;
     }
 
-    public void setLocationName(String locationName) {
-        this.locationName = locationName;
-    }
-
     public Integer getRunDayOfWeek() {
         return runDayOfWeek;
+    }
+
+    public void setRunDayOfWeek(Integer runDayOfWeek) {
+        this.runDayOfWeek = runDayOfWeek;
     }
 
     public RfbLocation runDayOfWeek(Integer runDayOfWeek) {
@@ -67,12 +70,12 @@ public class RfbLocation implements Serializable {
         return this;
     }
 
-    public void setRunDayOfWeek(Integer runDayOfWeek) {
-        this.runDayOfWeek = runDayOfWeek;
-    }
-
     public Set<RfbEvent> getRvbEvents() {
         return rvbEvents;
+    }
+
+    public void setRvbEvents(Set<RfbEvent> rfbEvents) {
+        this.rvbEvents = rfbEvents;
     }
 
     public RfbLocation rvbEvents(Set<RfbEvent> rfbEvents) {
@@ -90,10 +93,6 @@ public class RfbLocation implements Serializable {
         this.rvbEvents.remove(rfbEvent);
         rfbEvent.setRfbLocation(null);
         return this;
-    }
-
-    public void setRvbEvents(Set<RfbEvent> rfbEvents) {
-        this.rvbEvents = rfbEvents;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

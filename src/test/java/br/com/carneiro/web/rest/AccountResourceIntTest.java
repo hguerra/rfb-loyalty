@@ -1,7 +1,7 @@
 package br.com.carneiro.web.rest;
 
-import br.com.carneiro.config.Constants;
 import br.com.carneiro.RfbloyaltyApp;
+import br.com.carneiro.config.Constants;
 import br.com.carneiro.domain.Authority;
 import br.com.carneiro.domain.PersistentToken;
 import br.com.carneiro.domain.User;
@@ -10,13 +10,12 @@ import br.com.carneiro.repository.PersistentTokenRepository;
 import br.com.carneiro.repository.UserRepository;
 import br.com.carneiro.security.AuthoritiesConstants;
 import br.com.carneiro.service.MailService;
+import br.com.carneiro.service.UserService;
 import br.com.carneiro.service.dto.UserDTO;
 import br.com.carneiro.web.rest.errors.ExceptionTranslator;
 import br.com.carneiro.web.rest.vm.KeyAndPasswordVM;
 import br.com.carneiro.web.rest.vm.ManagedUserVM;
-import br.com.carneiro.service.UserService;
 import org.apache.commons.lang3.RandomStringUtils;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -32,10 +31,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
+
 import java.time.Instant;
 import java.time.LocalDate;
-
-import java.util.*;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
@@ -669,7 +671,7 @@ public class AccountResourceIntTest {
     @Test
     @Transactional
     @WithMockUser("current-sessions")
-    public void testGetCurrentSessions()  throws Exception {
+    public void testGetCurrentSessions() throws Exception {
         User user = new User();
         user.setPassword(RandomStringUtils.random(60));
         user.setLogin("current-sessions");

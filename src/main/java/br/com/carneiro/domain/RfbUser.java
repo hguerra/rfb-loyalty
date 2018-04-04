@@ -4,7 +4,6 @@ import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
-
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -42,26 +41,26 @@ public class RfbUser implements Serializable {
         return username;
     }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public RfbUser username(String username) {
         this.username = username;
         return this;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public RfbLocation getHomeLocation() {
         return homeLocation;
     }
 
+    public void setHomeLocation(RfbLocation rfbLocation) {
+        this.homeLocation = rfbLocation;
+    }
+
     public RfbUser homeLocation(RfbLocation rfbLocation) {
         this.homeLocation = rfbLocation;
         return this;
-    }
-
-    public void setHomeLocation(RfbLocation rfbLocation) {
-        this.homeLocation = rfbLocation;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

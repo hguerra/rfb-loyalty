@@ -1,10 +1,8 @@
 package br.com.carneiro.security.social;
 
 import io.github.jhipster.config.JHipsterProperties;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -27,6 +25,7 @@ public class CustomSignInAdapter implements SignInAdapter {
         this.userDetailsService = userDetailsService;
         this.jHipsterProperties = jHipsterProperties;
     }
+
     @Override
     public String signIn(String userId, Connection<?> connection, NativeWebRequest request) {
         UserDetails user = userDetailsService.loadUserByUsername(userId);

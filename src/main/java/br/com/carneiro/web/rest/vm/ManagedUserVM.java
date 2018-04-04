@@ -1,6 +1,7 @@
 package br.com.carneiro.web.rest.vm;
 
 import br.com.carneiro.service.dto.UserDTO;
+
 import javax.validation.constraints.Size;
 
 /**

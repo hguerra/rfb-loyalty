@@ -2,8 +2,6 @@ package br.com.carneiro.service.dto;
 
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -51,7 +49,7 @@ public class RfbUserDTO implements Serializable {
         }
 
         RfbUserDTO rfbUserDTO = (RfbUserDTO) o;
-        if(rfbUserDTO.getId() == null || getId() == null) {
+        if (rfbUserDTO.getId() == null || getId() == null) {
             return false;
         }
         return Objects.equals(getId(), rfbUserDTO.getId());

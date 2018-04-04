@@ -1,7 +1,6 @@
 package br.com.carneiro.web.rest;
 
 import br.com.carneiro.web.rest.vm.LoggerVM;
-
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.LoggerContext;
 import com.codahale.metrics.annotation.Timed;

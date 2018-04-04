@@ -1,8 +1,8 @@
 package br.com.carneiro.service.impl;
 
-import br.com.carneiro.service.RfbLocationService;
 import br.com.carneiro.domain.RfbLocation;
 import br.com.carneiro.repository.RfbLocationRepository;
+import br.com.carneiro.service.RfbLocationService;
 import br.com.carneiro.service.dto.RfbLocationDTO;
 import br.com.carneiro.service.mapper.RfbLocationMapper;
 import org.slf4j.Logger;

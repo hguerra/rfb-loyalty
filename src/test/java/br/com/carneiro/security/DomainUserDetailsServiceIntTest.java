@@ -3,7 +3,6 @@ package br.com.carneiro.security;
 import br.com.carneiro.RfbloyaltyApp;
 import br.com.carneiro.domain.User;
 import br.com.carneiro.repository.UserRepository;
-
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Before;
 import org.junit.Test;
